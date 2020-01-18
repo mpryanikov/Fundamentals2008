@@ -58,12 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
-
--- Cleanup
-UPDATE Production.Products
-  SET unitprice = 19.00
-WHERE productid = 2;
-
 ---------------------------------------------------------------------
 -- The REPEATABLE READ Isolation Level
 ---------------------------------------------------------------------
