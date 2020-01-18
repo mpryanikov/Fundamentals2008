@@ -58,8 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
--- Connection 1
-ROLLBACK TRAN;
 
 ---------------------------------------------------------------------
 -- The READ COMMITTED Isolation Level
