@@ -1,6 +1,5 @@
 -- Connection 2
--- Remove timeout
-SET LOCK_TIMEOUT -1;
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
 SELECT productid, unitprice
 FROM Production.Products
