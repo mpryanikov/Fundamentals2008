@@ -58,29 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
-
----------------------------------------------------------------------
--- The READ COMMITTED Isolation Level
----------------------------------------------------------------------
-
--- Connection 1
-BEGIN TRAN;
-
-  UPDATE Production.Products
-    SET unitprice = unitprice + 1.00
-  WHERE productid = 2;
-
-  SELECT productid, unitprice
-  FROM Production.Products
-  WHERE productid = 2;
-
--- Connection 2
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
-
-SELECT productid, unitprice
-FROM Production.Products
-WHERE productid = 2;
-
 -- Connection 1
 COMMIT TRAN;
 
