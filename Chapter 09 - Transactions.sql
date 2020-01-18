@@ -58,25 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
----------------------------------------------------------------------
--- The SERIALIZABLE Isolation Level
----------------------------------------------------------------------
-
--- Connection 1
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-
-BEGIN TRAN
-
-  SELECT productid, productname, categoryid, unitprice
-  FROM Production.Products
-  WHERE categoryid = 1;
-
--- Connection 2
-INSERT INTO Production.Products
-    (productname, supplierid, categoryid,
-     unitprice, discontinued)
-  VALUES('Product ABCDE', 1, 1, 20.00, 0);
-
 -- Connection 1
   SELECT productid, productname, categoryid, unitprice
   FROM Production.Products
