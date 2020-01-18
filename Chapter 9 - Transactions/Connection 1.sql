@@ -1,11 +1,9 @@
 -- Connection 1
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-
-BEGIN TRAN
-
   SELECT productid, productname, categoryid, unitprice
   FROM Production.Products
   WHERE categoryid = 1;
+
+COMMIT TRAN;
 
 /*
  productid     productname     categoryid     unitprice    

@@ -58,13 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
--- Connection 1
-  SELECT productid, productname, categoryid, unitprice
-  FROM Production.Products
-  WHERE categoryid = 1;
-
-COMMIT TRAN;
-
 -- Cleanup
 DELETE FROM Production.Products
 WHERE productid > 77;
