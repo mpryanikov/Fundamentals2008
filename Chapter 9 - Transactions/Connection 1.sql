@@ -1,24 +1,14 @@
-/*
 -- Connection 1
-BEGIN TRAN;
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 
-  UPDATE Production.Products
-    SET unitprice = unitprice + 1.00
-  WHERE productid = 2;
+BEGIN TRAN;
 
   SELECT productid, unitprice
   FROM Production.Products
   WHERE productid = 2;
-*/
 
 /*
- 1 запись(и) поддающаяся(иеся) действию 
-
  productid     unitprice    
  ------------  ------------ 
- 2             21           
-
- 1 запись(ей) выделено [Извлечь (fetch) MetaData: 0мс] [Извлечь данные: 15мс] 
+ 2             19       
 */
-
-COMMIT TRAN;
