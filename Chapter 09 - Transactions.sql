@@ -58,13 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 ////////////
 
--- Connection 2
--- Stop, then set the LOCK_TIMEOUT, then retry
-SET LOCK_TIMEOUT 5000;
-
-SELECT productid, unitprice
-FROM Production.Products
-WHERE productid = 2;
 
 -- Remove timeout
 SET LOCK_TIMEOUT -1;
