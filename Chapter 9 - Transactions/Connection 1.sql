@@ -1,3 +1,4 @@
+/*
 -- Connection 1
 BEGIN TRAN;
 
@@ -8,6 +9,7 @@ BEGIN TRAN;
   SELECT productid, unitprice
   FROM Production.Products
   WHERE productid = 2;
+*/
 
 /*
  1 запись(и) поддающаяся(иеся) действию 
@@ -18,3 +20,5 @@ BEGIN TRAN;
 
  1 запись(ей) выделено [Извлечь (fetch) MetaData: 0мс] [Извлечь данные: 15мс] 
 */
+
+COMMIT TRAN;

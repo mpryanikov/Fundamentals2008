@@ -58,8 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
--- Connection 1
-COMMIT TRAN;
 
 -- Cleanup
 UPDATE Production.Products
