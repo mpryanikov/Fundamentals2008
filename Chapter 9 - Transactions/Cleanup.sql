@@ -1,8 +1,13 @@
 -- Cleanup
-DELETE FROM Production.Products
-WHERE productid > 77;
+UPDATE Production.Products
+  SET unitprice = 19.00
+WHERE productid = 2;
 
-DBCC CHECKIDENT ('Production.Products', RESEED, 77);
+-- Close all connections
 
--- In all connections issue:
+-- Make sure you're back in default mode
 SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+-- Change database options to default
+ALTER DATABASE TSQLFundamentals2008 SET ALLOW_SNAPSHOT_ISOLATION OFF;
+ALTER DATABASE TSQLFundamentals2008 SET READ_COMMITTED_SNAPSHOT OFF;
