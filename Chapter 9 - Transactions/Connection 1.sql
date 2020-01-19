@@ -1,14 +1,10 @@
--- Connection 1, Step 1
-SET TRANSACTION ISOLATION LEVEL SNAPSHOT;
-
-BEGIN TRAN;
-
-  SELECT productid, unitprice
-  FROM Production.Products
+-- Connection 1, Step 2
+  UPDATE Production.Products
+    SET unitprice = 20.00
   WHERE productid = 2;
+  
+COMMIT TRAN;
 
 /*
- productid     unitprice    
- ------------  ------------ 
- 2             19           
+ 1 запись(и) поддающаяся(иеся) действию
 */
