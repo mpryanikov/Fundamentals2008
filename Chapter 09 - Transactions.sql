@@ -58,19 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
----------------------------------------------------------------------
--- Conflict Detection
----------------------------------------------------------------------
-
--- Connection 1, Step 1
-SET TRANSACTION ISOLATION LEVEL SNAPSHOT;
-
-BEGIN TRAN;
-
-  SELECT productid, unitprice
-  FROM Production.Products
-  WHERE productid = 2;
-
 -- Connection 1, Step 2
   UPDATE Production.Products
     SET unitprice = 20.00
