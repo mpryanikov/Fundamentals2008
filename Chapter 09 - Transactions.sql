@@ -58,17 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
--- Connection 1, Step 1
-BEGIN TRAN;
-
-  SELECT productid, unitprice
-  FROM Production.Products
-  WHERE productid = 2;
-
--- Connection 2, Step 1
-UPDATE Production.Products
-  SET unitprice = 25.00
-WHERE productid = 2;
 
 -- Connection 1, Step 2
   UPDATE Production.Products
