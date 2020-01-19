@@ -1,8 +1,12 @@
--- Connection 2, Step 1
-UPDATE Production.Products
-  SET unitprice = 25.00
-WHERE productid = 2;
+-- Connection 2
+BEGIN TRAN;
+
+  SELECT productid, unitprice
+  FROM Production.Products
+  WHERE productid = 2;
 
 /*
-1 запись(и) поддающаяся(иеся) действию
+ productid     unitprice    
+ ------------  ------------ 
+ 2             19    
 */
