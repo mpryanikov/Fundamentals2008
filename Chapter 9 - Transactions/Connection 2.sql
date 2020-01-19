@@ -1,4 +1,5 @@
 -- Connection 2
+BEGIN TRAN
 
   SELECT productid, unitprice
   FROM Production.Products
@@ -9,5 +10,5 @@ COMMIT TRAN;
 /*
  productid     unitprice    
  ------------  ------------ 
- 2             21     
+ 2             22      
 */
