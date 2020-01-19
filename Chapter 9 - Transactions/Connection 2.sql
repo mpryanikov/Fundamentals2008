@@ -5,9 +5,3 @@
   WHERE productid = 2;
 
 COMMIT TRAN;
-
-/*
- productid     unitprice    
- ------------  ------------ 
- 2             20      
-*/
