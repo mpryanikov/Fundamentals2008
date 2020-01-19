@@ -58,13 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
----------------------------------------------------------------------
--- The READ COMMITTED SNAPSHOT Isolation Level
----------------------------------------------------------------------
-
--- Turn on READ_COMMITTED_SNAPSHOT
-ALTER DATABASE TSQLFundamentals2008 SET READ_COMMITTED_SNAPSHOT ON;
-
 -- Connection 1
 USE TSQLFundamentals2008;
 
