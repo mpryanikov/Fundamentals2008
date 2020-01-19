@@ -58,31 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
-
----------------------------------------------------------------------
--- Deadlocks
----------------------------------------------------------------------
-
----------------------------------------------------------------------
--- Simple Deadlock Example
----------------------------------------------------------------------
-
--- Connection 1
-USE TSQLFundamentals2008;
-
-BEGIN TRAN;
-
-  UPDATE Production.Products
-    SET unitprice = unitprice + 1.00
-  WHERE productid = 2;
-
--- Connection 2
-BEGIN TRAN;
-
-  UPDATE Sales.OrderDetails
-    SET unitprice = unitprice + 1.00
-  WHERE productid = 2;
-
 -- Connection 1
 
   SELECT orderid, productid, unitprice
