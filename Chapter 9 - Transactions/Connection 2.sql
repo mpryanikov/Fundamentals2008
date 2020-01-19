@@ -1,9 +1,14 @@
 -- Connection 2
-INSERT INTO Production.Products
-    (productname, supplierid, categoryid,
-     unitprice, discontinued)
-  VALUES('Product ABCDE', 1, 1, 20.00, 0);
+SET TRANSACTION ISOLATION LEVEL SNAPSHOT;
+
+BEGIN TRAN;
+
+  SELECT productid, unitprice
+  FROM Production.Products
+  WHERE productid = 2;
 
 /*
- 1 запись(и) поддающаяся(иеся) действию 
+ productid     unitprice    
+ ------------  ------------ 
+ 2             21      
 */

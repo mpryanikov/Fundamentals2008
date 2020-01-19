@@ -1,0 +1,2 @@
+-- Allow SNAPSHOT isolation in the database
+ALTER DATABASE TSQLFundamentals2008 SET ALLOW_SNAPSHOT_ISOLATION ON;

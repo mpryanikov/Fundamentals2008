@@ -58,37 +58,6 @@ DBCC CHECKIDENT ('Sales.Orders', RESEED, 11077);
 
 --////////////
 
----------------------------------------------------------------------
--- Snapshot Isolation Levels
----------------------------------------------------------------------
-
----------------------------------------------------------------------
--- The SNAPSHOT Isolation Level
----------------------------------------------------------------------
-
--- Allow SNAPSHOT isolation in the database
-ALTER DATABASE TSQLFundamentals2008 SET ALLOW_SNAPSHOT_ISOLATION ON;
-
--- Connection 1
-BEGIN TRAN;
-
-  UPDATE Production.Products
-    SET unitprice = unitprice + 1.00
-  WHERE productid = 2;
-
-  SELECT productid, unitprice
-  FROM Production.Products
-  WHERE productid = 2;
-
--- Connection 2
-SET TRANSACTION ISOLATION LEVEL SNAPSHOT;
-
-BEGIN TRAN;
-
-  SELECT productid, unitprice
-  FROM Production.Products
-  WHERE productid = 2;
-
 -- Connection 1
 
 COMMIT TRAN;
