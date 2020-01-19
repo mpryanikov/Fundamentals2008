@@ -1,12 +1,8 @@
--- Connection 1, Step 1
-BEGIN TRAN;
-
-  SELECT productid, unitprice
-  FROM Production.Products
+-- Connection 1, Step 2
+  UPDATE Production.Products
+    SET unitprice = 20.00
   WHERE productid = 2;
 
 /*
- productid     unitprice    
- ------------  ------------ 
- 2             19   
+Транзакция в режиме изоляции моментального снимка прервана из-за конфликта обновлений. Невозможно использовать режим изоляции моментального снимка для прямого или косвенного доступа к таблице "Production.Products" в базе данных "TSQLFundamentals2008" для обновления, удаления или вставки строки, которая изменена или удалена другой транзакцией. Повторите транзакцию или измените уровень изоляции для инструкции обновления или удаления.
 */
