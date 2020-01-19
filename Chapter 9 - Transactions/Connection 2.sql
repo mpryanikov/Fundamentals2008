@@ -1,6 +1,7 @@
 -- Connection 2
-BEGIN TRAN;
 
-  UPDATE Sales.OrderDetails
-    SET unitprice = unitprice + 1.00
+  SELECT productid, unitprice
+  FROM Production.Products
   WHERE productid = 2;
+
+COMMIT TRAN;
